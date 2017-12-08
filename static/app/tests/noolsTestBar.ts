@@ -15,7 +15,7 @@ import { Mood } from '../context/types/Mood';
     <div id="affdex_elements" style="width:640px;height:480px;"></div>
         <div class="container" >
             <div class="checkbox">
-                <label><input type="checkbox" [(ngModel)]="active" (ngModelChange)="setActivation()">Context Tracking</label>
+                <label><input type="checkbox" [(ngModel)]="active" (ngModelChange)="setActivation()">Allow Context Tracking</label>
                 <label><input type="checkbox" [(ngModel)]="dashboard">ToggleDashboard</label>
                 <a (click)="logout()" href="">Click Here to logout</a>
             </div>
@@ -97,6 +97,7 @@ export class NoolsTestBarComponent {
           private _service : AuthenticationService,
           private _context : ContextControllerService
       ) {
+      
           this.active = true;
           this.profile = this._context.getProfile();
           this.change = this._context.changedSubject.subscribe(change => {
@@ -107,10 +108,14 @@ export class NoolsTestBarComponent {
               this.language = Language[this.profile.getUser().getLanguage()];
               this.deviceType = this.profile.getPlatform().getDeviceType();
               this.userRole = this.profile.getApp().getUserRole();
-              this.moodChecked = this.profile.getApp().getMoodChecked();
+              if(this.mood!=null)
+              this.moodChecked = true;
+              else 
+              this.moodChecked = false;
+              //this.moodChecked = this.profile.getApp().getMoodChecked();
               
   
-              this._context.setNotChanged();
+             this._context.setNotChanged();
           });
     }
   
@@ -118,7 +123,7 @@ export class NoolsTestBarComponent {
           this._service.logout();
       }
     
-      setActivation(){
+      setActivation(){        
           this._context.setActivation(this.active);
       }
   }

@@ -31,9 +31,9 @@ var FaceDetectionService = (function () {
         setTimeout(function () {
             var divRoot = $("#affdex_elements")[0];
             // The captured frame's width in pixels
-            var width = 640;
+            var width = 1280;
             // The captured frame's height in pixels
-            var height = 480;
+            var height = 720;
             /*
             Face detector configuration - If not specified, defaults to
             affdex.FaceDetectorMode.LARGE_FACES
@@ -64,17 +64,18 @@ var FaceDetectionService = (function () {
             detector.addEventListener("onStopSuccess", function () {
                 console.log("The detector reports stopped");
             });
-            _this.mood = Mood_1.Mood.indifferent;
-            _this.age = 0;
+            _this.mood = null;
+            _this.age = null;
             detector.addEventListener("onImageResultsSuccess", function (faces, image, timestamp) {
                 // console.log("Timestamp: " + timestamp.toFixed(2));
                 // console.log("Number of faces found: " + faces.length);
                 if (faces.length > 0) {
                     _this.faceDetected = true;
-                    //If joy of the first face is over 50% then show in log
-                    // console.log("Emotions: " + JSON.stringify(faces[0].emotions, function(key, val) {
-                    // return val.toFixed ? Number(val.toFixed(0)) : val;
-                    // }));
+                }
+                else {
+                    _this.faceDetected = false;
+                }
+                if (_this.faceDetected) {
                     if (faces[0].emotions.anger > 10) {
                         _this.mood = Mood_1.Mood.angry;
                     }
@@ -130,8 +131,9 @@ var FaceDetectionService = (function () {
                             ;
                     }
                 }
-                else {
-                    _this.faceDetected = false;
+                else if (_this.faceDetected == false) {
+                    _this.mood = null;
+                    _this.age = null;
                 }
             });
             detector.start();

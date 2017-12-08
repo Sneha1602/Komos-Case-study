@@ -51,20 +51,21 @@ var DeviceAPIService = (function () {
                 _this.acceleartionAvg += 100;
             }
             _this.acceleartionAvg = _this.acceleartionAvg / 25;
-            // if(this.i == 100){
-            //     console.log(this.acceleartionAvg);
-            //     this.i=0;
-            // }else{
-            //     this.i++;
-            // }
+            if (_this.i == 100) {
+                console.log(_this.acceleartionAvg);
+                _this.i = 0;
+            }
+            else {
+                _this.i++;
+            }
             if (_this.acceleartionAvg >= 1) {
-                _this.movement = 2;
+                _this.movement = 0;
             }
             else if (_this.acceleartionAvg >= 0.5) {
                 _this.movement = 1;
             }
             else {
-                _this.movement = 0;
+                _this.movement = 2;
             }
         });
         // PROTECTED REGION END

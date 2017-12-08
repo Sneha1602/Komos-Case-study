@@ -8,10 +8,10 @@ declare var $: any;
                 var divRoot = $("#affdex_elements")[0];
 
                 // The captured frame's width in pixels
-                var width = 640;
+                var width = 1280;
 
                 // The captured frame's height in pixels
-                var height = 480;
+                var height = 720;
 
                 /*
                 Face detector configuration - If not specified, defaults to
@@ -50,17 +50,23 @@ declare var $: any;
                 console.log("The detector reports stopped");
                 });
                 
-                this.mood = Mood.indifferent;
-                this.age = 0;
+                this.mood = null;
+                this.age = null;
                 detector.addEventListener("onImageResultsSuccess", (faces: any, image: any, timestamp:any) => {
                         // console.log("Timestamp: " + timestamp.toFixed(2));
                         // console.log("Number of faces found: " + faces.length);
                         if (faces.length > 0) {
                                 this.faceDetected = true;
+                         }
                                 //If joy of the first face is over 50% then show in log
                                 // console.log("Emotions: " + JSON.stringify(faces[0].emotions, function(key, val) {
                                 // return val.toFixed ? Number(val.toFixed(0)) : val;
                                 // }));
+                         else{
+                           this.faceDetected = false;
+                         }
+                          
+                          if(this.faceDetected){
                                 if(faces[0].emotions.anger>10){
                                         this.mood = Mood.angry;
                                 }else if(faces[0].emotions.joy>15){
@@ -103,9 +109,14 @@ declare var $: any;
                                         //         this.age = 40;
                                         // };
                                 }
-                        }else{
-                                this.faceDetected = false;
-                        }
+                          }
+                          
+                        else if(this.faceDetected == false)
+                            {
+                            this.mood = null;
+                            this.age = null;
+                          }
+                 
                 });
 
                 detector.start();

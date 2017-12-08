@@ -32,19 +32,19 @@
             }
             this.acceleartionAvg = this.acceleartionAvg/25;
 
-            // if(this.i == 100){
-            //     console.log(this.acceleartionAvg);
-            //     this.i=0;
-            // }else{
-            //     this.i++;
-            // }
+             if(this.i == 100){
+                 console.log(this.acceleartionAvg);
+                 this.i=0;
+             }else{
+                 this.i++;
+             }
 
             if(this.acceleartionAvg >= 1){
-                this.movement = 2;
+                this.movement = 0;
             }else if(this.acceleartionAvg >= 0.5){
                 this.movement = 1;
             }else{
-                this.movement = 0;
+                this.movement = 2;
             }
 
         });
