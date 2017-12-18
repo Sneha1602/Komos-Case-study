@@ -17,7 +17,7 @@ declare var $: any;
                 Face detector configuration - If not specified, defaults to
                 affdex.FaceDetectorMode.LARGE_FACES
                 */
-                var faceMode = affdex.FaceDetectorMode.LARGE_FACES;
+                var faceMode = affdex.FaceDetectorMode.SMALL_FACES;
 
                 //Construct a CameraDetector and specify the image width / height and face detector mode.
                 var detector = new affdex.CameraDetector(divRoot, width, height, faceMode);
