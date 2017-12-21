@@ -54,7 +54,7 @@ class NavbarGenerator extends AbstractClassGenerator<ViewContainerImpl[]> {
 	                <span class="icon-bar"></span>
 	                <span class="icon-bar"></span>
 	              </button>
-	              <a href="\" class="navbar-brand">LibSoft</a>
+	              <a href="\" class="navbar-brand">KOMOS BANK</a>
 	            </div>
 	            <div [ngClass]="_«ServiceCollection.sharedInstance.displayProperties.name.toFirstLower».displayProperties.navbarCollapseClass" id="bs-nav">
 	              <ul [ngClass]="_«ServiceCollection.sharedInstance.displayProperties.name.toFirstLower».displayProperties.navbarItemListClass">
