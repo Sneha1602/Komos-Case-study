@@ -1,5 +1,5 @@
 "use strict";
 exports.LowResImages = [
-    { key: 'books', path: '../app/ressources/lowRes/library_small.jpg' }
+    { key: 'books', path: '../app/resources/images/komos_transp.png' }
 ];
 //# sourceMappingURL=lowResImages.js.map

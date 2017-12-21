@@ -1,5 +1,5 @@
 <!--
-   Created by IFML2NG2 on 2017/12/08 11:33:39
+   Created by IFML2NG2 on 2017/12/21 13:09:42
 -->
 
 <div class="col-md-12">
@@ -13,19 +13,19 @@
 	 		<table id="_lInRMJ9mEeeQDN6CvfzAfw" name="accountList" [ngClass]="_displayPropertiesService.displayProperties.tableClass">
 	 			<thead>
 	 	<th>
-	 		{{_resourceService.getLangString('balance')}}
+	 		{{_resourceService.getLangString('accountID')}}
 	 	</th>
 	 	<th>
-	 		{{_resourceService.getLangString('accountID')}}
+	 		{{_resourceService.getLangString('balance')}}
 	 	</th>
 	 	</thead>
 	 	<tbody>
 	 	<tr *ngFor="#el of accountBinding| accountListFilter: filterBy" (click)="onSelect(el)" [class.info]="el === selectedAccountBinding">
 	 	<td>
-	 		{{el.balance}}
+	 		{{el.accountID}}
 	 	</td>
 	 	<td>
-	 		{{el.accountID}}
+	 		{{el.balance}}
 	 	</td>
 	 				</tr>
 	 			</tbody>
@@ -43,19 +43,19 @@
 	 	
 	 		<tr>
 	 			<th>
-	 				{{_resourceService.getLangString('balance')}}
+	 				{{_resourceService.getLangString('accountID')}}
 	 			</th>
 	 			<td>
-	 				{{selectedAccountBinding.balance}}
+	 				{{selectedAccountBinding.accountID}}
 	 			</td>
 	 		</tr>
 	 	
 	 		<tr>
 	 			<th>
-	 				{{_resourceService.getLangString('accountID')}}
+	 				{{_resourceService.getLangString('balance')}}
 	 			</th>
 	 			<td>
-	 				{{selectedAccountBinding.accountID}}
+	 				{{selectedAccountBinding.balance}}
 	 			</td>
 	 		</tr>
 	 			</table>

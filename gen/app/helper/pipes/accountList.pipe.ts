@@ -11,8 +11,8 @@ export class AccountListFilter implements PipeTransform{
 				filterBy = JSON.parse(filterBy);
 				if(filterBy['*'] != undefined){
 					// if filterBy contains '*'-element, all columns are filtered by value
-return items.filter(item => 					item.balance.toString().toLowerCase().indexOf(filterBy['*'].toLowerCase()) !== -1||
-					item.accountID.toString().toLowerCase().indexOf(filterBy['*'].toLowerCase()) !== -1
+return items.filter(item => 					item.accountID.toString().toLowerCase().indexOf(filterBy['*'].toLowerCase()) !== -1||
+					item.balance.toString().toLowerCase().indexOf(filterBy['*'].toLowerCase()) !== -1
 );				}else{
 					// filter by keys in filterBy array
 					var arrayOfKeys = Object.keys(filterBy);

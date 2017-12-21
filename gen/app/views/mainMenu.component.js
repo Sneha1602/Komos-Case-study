@@ -1,5 +1,5 @@
 //
-// Created by IFML2NG2 on 2017/12/08 11:33:39
+// Created by IFML2NG2 on 2017/12/21 13:09:42
 //
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -38,8 +38,8 @@ var MainMenuComponent = (function () {
         this._resourceService = _resourceService;
         // fill advanced search space
         this.advancedSearchSpace = [
-            { key: "balance", title: "accountStatus" },
-            { key: "accountID", title: "accoundID" }
+            { key: "accountID", title: "accoundID" },
+            { key: "balance", title: "accountStatus" }
         ];
     }
     // stubs generated for view element events

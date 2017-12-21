@@ -1,5 +1,5 @@
 //
-// Created by IFML2NG2 on 2017/12/08 11:33:39
+// Created by IFML2NG2 on 2017/12/21 13:09:42
 //
 
 // Angular Imports
@@ -39,8 +39,8 @@ export class MainMenuComponent {
 	filterBy: String;
 	// variable for list data binding
 	accountBinding: Account[];
-	accountStatus: any;
 	accoundID: any;
+	accountStatus: any;
 	// PROTECTED REGION ID _S15wQJxwEee_2OeSSzYyRQ.mainMenu ENABLED START
 	// PROTECTED REGION END
 
@@ -55,8 +55,8 @@ export class MainMenuComponent {
 		){
 		// fill advanced search space
 		this.advancedSearchSpace = [
-		{key: "balance", title: "accountStatus"},
-		{key: "accountID", title: "accoundID"}
+		{key: "accountID", title: "accoundID"},
+		{key: "balance", title: "accountStatus"}
 		];
 	}
 		
