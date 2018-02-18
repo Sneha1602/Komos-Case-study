@@ -21,6 +21,7 @@
           <type xsi:type="uml:Class" href="Komos_CD.uml#_8kpXIYCrEeakIrkbdVKNbg"/>
         </parameters>
         <viewElementEvents xsi:type="ext:OnSelectEvent" id="_Vto7gJ9nEeeQDN6CvfzAfw" name="selectAccount">
+          <annotations text="&lt;&lt;activationExpression>> &lt;&lt;Parameter>> accountBinding"/>
           <outInteractionFlows xsi:type="core:NavigationFlow" id="_cWSqgJ9nEeeQDN6CvfzAfw" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.6"/>
         </viewElementEvents>
         <viewComponentParts xsi:type="core:DataBinding" id="_rFDacJ9mEeeQDN6CvfzAfw" name="accountBinding" domainConcept="//@domainModel/@domainElements.4">

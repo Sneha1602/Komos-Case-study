@@ -4,6 +4,7 @@
     <interactionFlowModelElements xsi:type="core:ViewContainer" id="_SGc7MJxuEee_2OeSSzYyRQ" name="login" isDefault="true">
       <viewElements xsi:type="ext:Form" id="_bL9uMJxuEee_2OeSSzYyRQ" name="loginForm">
         <viewElementEvents xsi:type="ext:OnSubmitEvent" id="_M9m8oJxvEee_2OeSSzYyRQ" name="loginEvent">
+          <annotations text="&lt;&lt;enablingExpression>> username&amp;&amp;password"/>
           <outInteractionFlows xsi:type="core:NavigationFlow" id="_WtS4kJxwEee_2OeSSzYyRQ" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.2"/>
         </viewElementEvents>
         <viewComponentParts xsi:type="ext:SimpleField" id="_wbp_EJxuEee_2OeSSzYyRQ" name="username">
@@ -20,6 +21,7 @@
           <type xsi:type="uml:Class" href="Komos_CD.uml#_8kpXIYCrEeakIrkbdVKNbg"/>
         </parameters>
         <viewElementEvents xsi:type="ext:OnSelectEvent" id="_Vto7gJ9nEeeQDN6CvfzAfw" name="selectAccount">
+          <annotations text="&lt;&lt;activationExpression>> &lt;&lt;Parameter>> accountBinding"/>
           <outInteractionFlows xsi:type="core:NavigationFlow" id="_cWSqgJ9nEeeQDN6CvfzAfw" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.6"/>
         </viewElementEvents>
         <viewComponentParts xsi:type="core:DataBinding" id="_rFDacJ9mEeeQDN6CvfzAfw" name="accountBinding" domainConcept="//@domainModel/@domainElements.4">
