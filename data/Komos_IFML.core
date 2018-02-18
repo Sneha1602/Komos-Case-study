@@ -4,6 +4,7 @@
     <interactionFlowModelElements xsi:type="core:ViewContainer" id="_SGc7MJxuEee_2OeSSzYyRQ" name="login" isDefault="true">
       <viewElements xsi:type="ext:Form" id="_bL9uMJxuEee_2OeSSzYyRQ" name="loginForm">
         <viewElementEvents xsi:type="ext:OnSubmitEvent" id="_M9m8oJxvEee_2OeSSzYyRQ" name="loginEvent">
+          <annotations text="&lt;&lt;enablingExpression>> username&amp;&amp;password"/>
           <outInteractionFlows xsi:type="core:NavigationFlow" id="_WtS4kJxwEee_2OeSSzYyRQ" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.2"/>
         </viewElementEvents>
         <viewComponentParts xsi:type="ext:SimpleField" id="_wbp_EJxuEee_2OeSSzYyRQ" name="username">

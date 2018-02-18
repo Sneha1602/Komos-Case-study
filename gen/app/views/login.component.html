@@ -1,5 +1,5 @@
 <!--
-   Created by IFML2NG2 on 2017/12/25 19:50:43
+   Created by IFML2NG2 on 2018/02/18 01:38:01
 -->
 
 <div class="col-md-12">
@@ -11,6 +11,9 @@
 	 	<form id="_bL9uMJxuEee_2OeSSzYyRQ" name="loginForm" class="form-horizontal">
 	 	
 	 	<!-- PROTECTED REGION ID loginForm ENABLED START -->
+	 			  	
+	 			  	
+	 			  	
 	 			  	
 	 			  	
 	 			  	
@@ -46,9 +49,9 @@
 	 	</div>
 	 	<div class="form-group">
 	 		<div class="col-sm-offset-2 col-sm-10">
-	 			<button id="_M9m8oJxvEee_2OeSSzYyRQ" name="loginEvent" (click)="loginEvent()" type="submit" class="btn btn-default">{{_resourceService.getLangString('loginEvent')}}</button>
-	 		</div>
-	 	</div>
+	 			<button id="_M9m8oJxvEee_2OeSSzYyRQ" name="loginEvent" (click)="loginEvent()" type="submit" class="btn btn-default"[ngClass]="{disabled: !(username&&password)}">{{_resourceService.getLangString('loginEvent')}}</button>
+	 						</div>
+	 					</div>
 	 	</form>
 	</div>
 </div>
