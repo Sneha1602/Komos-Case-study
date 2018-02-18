@@ -39,6 +39,7 @@
           <type xsi:type="uml:Class" href="Komos_CD.uml#_8kpXJ4CrEeakIrkbdVKNbg"/>
         </parameters>
         <viewElementEvents xsi:type="ext:OnSubmitEvent" id="_GboJAJ9yEeeQDN6CvfzAfw" name="transfer">
+          <annotations text="&lt;&lt;enablingExpression>> fiveNotes||tenNotes||twentyNotes||fiftyNotes"/>
           <outInteractionFlows xsi:type="core:DataFlow" id="_1Vpi4J-aEeeQDN6CvfzAfw" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.4"/>
         </viewElementEvents>
         <viewComponentParts xsi:type="ext:SimpleField" id="_gVpcAJ9nEeeQDN6CvfzAfw" name="fiveNotes">
