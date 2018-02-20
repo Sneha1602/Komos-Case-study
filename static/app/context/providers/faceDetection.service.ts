@@ -11,13 +11,13 @@ declare var $: any;
                 var width = 1280;
 
                 // The captured frame's height in pixels
-                var height = 720;
+                var height = 1024;
 
                 /*
                 Face detector configuration - If not specified, defaults to
                 affdex.FaceDetectorMode.LARGE_FACES
                 */
-                var faceMode = affdex.FaceDetectorMode.SMALL_FACES;
+                var faceMode = affdex.FaceDetectorMode.LARGE_FACES;
 
                 //Construct a CameraDetector and specify the image width / height and face detector mode.
                 var detector = new affdex.CameraDetector(divRoot, width, height, faceMode);
@@ -51,7 +51,7 @@ declare var $: any;
                 });
                 
                 this.mood = null;
-                this.age = null;
+                this.age = 0;
                 detector.addEventListener("onImageResultsSuccess", (faces: any, image: any, timestamp:any) => {
                         // console.log("Timestamp: " + timestamp.toFixed(2));
                         // console.log("Number of faces found: " + faces.length);
@@ -111,11 +111,9 @@ declare var $: any;
                                 }
                           }
                           
-                        else if(this.faceDetected == false)
-                            {
-                            this.mood = null;
-                            this.age = null;
-                          }
+                          else{
+                                this.faceDetected = false;
+                        }
                  
                 });
 

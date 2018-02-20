@@ -33,12 +33,12 @@ var FaceDetectionService = (function () {
             // The captured frame's width in pixels
             var width = 1280;
             // The captured frame's height in pixels
-            var height = 720;
+            var height = 1024;
             /*
             Face detector configuration - If not specified, defaults to
             affdex.FaceDetectorMode.LARGE_FACES
             */
-            var faceMode = affdex.FaceDetectorMode.SMALL_FACES;
+            var faceMode = affdex.FaceDetectorMode.LARGE_FACES;
             //Construct a CameraDetector and specify the image width / height and face detector mode.
             var detector = new affdex.CameraDetector(divRoot, width, height, faceMode);
             $("#affdex_elements").hide();
@@ -65,7 +65,7 @@ var FaceDetectionService = (function () {
                 console.log("The detector reports stopped");
             });
             _this.mood = null;
-            _this.age = null;
+            _this.age = 0;
             detector.addEventListener("onImageResultsSuccess", function (faces, image, timestamp) {
                 // console.log("Timestamp: " + timestamp.toFixed(2));
                 // console.log("Number of faces found: " + faces.length);
@@ -131,9 +131,8 @@ var FaceDetectionService = (function () {
                             ;
                     }
                 }
-                else if (_this.faceDetected == false) {
-                    _this.mood = null;
-                    _this.age = null;
+                else {
+                    _this.faceDetected = false;
                 }
             });
             detector.start();
