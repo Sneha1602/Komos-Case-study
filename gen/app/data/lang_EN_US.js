@@ -19,5 +19,7 @@ exports.lang_EN_US = [
     { key: 'search', text: 'Search' },
     { key: 'mainMenu', text: 'Main Menu' },
     { key: 'transactionView', text: 'Transactions' },
+    { key: 'helpWindow', text: 'Help Window' },
+    { key: 'showNearByATMs', text: 'Show Near By ATMs' }
 ];
 //# sourceMappingURL=lang_EN_US.js.map

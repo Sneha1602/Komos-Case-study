@@ -15,7 +15,7 @@
         </viewComponentParts>
       </viewElements>
     </interactionFlowModelElements>
-    <interactionFlowModelElements xsi:type="core:ViewContainer" id="_S15wQJxwEee_2OeSSzYyRQ" name="mainMenu" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.2/@outInteractionFlows.0">
+    <interactionFlowModelElements xsi:type="core:ViewContainer" id="_S15wQJxwEee_2OeSSzYyRQ" name="mainMenu">
       <viewElements xsi:type="ext:List" id="_lInRMJ9mEeeQDN6CvfzAfw" name="accountList">
         <parameters id="_zupGcJ9mEeeQDN6CvfzAfw" name="accountBinding">
           <type xsi:type="uml:Class" href="Komos_CD.uml#_8kpXIYCrEeakIrkbdVKNbg"/>
@@ -31,9 +31,9 @@
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="core:IFMLAction" id="_ZYq5sJxwEee_2OeSSzYyRQ" name="loginAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.0/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0">
-      <outInteractionFlows xsi:type="core:NavigationFlow" id="_he3vUJxxEee_2OeSSzYyRQ" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.1"/>
+      <outInteractionFlows xsi:type="core:NavigationFlow" id="_he3vUJxxEee_2OeSSzYyRQ"/>
     </interactionFlowModelElements>
-    <interactionFlowModelElements xsi:type="core:ViewContainer" id="_tzHksJ4dEeeQDN6CvfzAfw" name="denomination" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.6/@outInteractionFlows.0">
+    <interactionFlowModelElements xsi:type="core:ViewContainer" id="_tzHksJ4dEeeQDN6CvfzAfw" name="denomination">
       <viewElements xsi:type="ext:Form" id="_jbcpcJ4hEeeQDN6CvfzAfw" name="denomination">
         <parameters id="_ARhIcJ94EeeQDN6CvfzAfw" name="transferBinding">
           <type xsi:type="uml:Class" href="Komos_CD.uml#_8kpXJ4CrEeakIrkbdVKNbg"/>
@@ -57,7 +57,7 @@
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="core:IFMLAction" id="_zryXAJ93EeeQDN6CvfzAfw" name="transferAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.3/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0"/>
-    <interactionFlowModelElements xsi:type="core:ViewContainer" id="_kZgfALTcEeeUzbyM6lB9Aw" name="transactionView">
+    <interactionFlowModelElements xsi:type="core:ViewContainer" id="_kZgfALTcEeeUzbyM6lB9Aw" name="transactionView" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.8/@outInteractionFlows.0">
       <viewElements xsi:type="ext:List" id="__KvF0LTcEeeUzbyM6lB9Aw" name="transactionList">
         <parameters id="_2q6kYLTdEeeUzbyM6lB9Aw" name="transactionBinding">
           <type xsi:type="uml:Class" href="Komos_CD.uml#_8kpXJ4CrEeakIrkbdVKNbg"/>
@@ -69,8 +69,22 @@
       </viewElements>
     </interactionFlowModelElements>
     <interactionFlowModelElements xsi:type="core:IFMLAction" id="_vAz04LTcEeeUzbyM6lB9Aw" name="denominationAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.1/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0">
-      <outInteractionFlows xsi:type="core:NavigationFlow" id="_wz6xQLTcEeeUzbyM6lB9Aw" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.3"/>
+      <outInteractionFlows xsi:type="core:NavigationFlow" id="_wz6xQLTcEeeUzbyM6lB9Aw" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.8"/>
     </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="core:ViewContainer" id="_CeMbfTEwEeifUboAQqDOdA" name="helpWindow">
+      <viewElements xsi:type="ext:Form" id="_KBDI7zEwEeifUboAQqDOdA" name="helpForm">
+        <viewElementEvents xsi:type="ext:OnSubmitEvent" id="_QAydyTEwEeifUboAQqDOdA" name="submitQuestion">
+          <outInteractionFlows xsi:type="core:NavigationFlow" id="_TzesRzEwEeifUboAQqDOdA" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.8"/>
+        </viewElementEvents>
+        <viewComponentParts xsi:type="ext:SimpleField" id="_L_DtwjEwEeifUboAQqDOdA" name="question">
+          <type xsi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </viewComponentParts>
+      </viewElements>
+    </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="core:IFMLAction" id="_VjTENjEwEeifUboAQqDOdA" name="submitQuestionAction" inInteractionFlows="//@interactionFlowModel/@interactionFlowModelElements.6/@outInteractionFlows.0 //@interactionFlowModel/@interactionFlowModelElements.7/@viewElements.0/@viewElementEvents.0/@outInteractionFlows.0">
+      <outInteractionFlows xsi:type="core:NavigationFlow" id="_Z-7h5zEwEeifUboAQqDOdA" targetInteractionFlowElement="//@interactionFlowModel/@interactionFlowModelElements.5"/>
+    </interactionFlowModelElements>
+    <interactionFlowModelElements xsi:type="core:ViewContainer" id="_RfXJDTE6EeifUboAQqDOdA" name="showNearByATMs"/>
   </interactionFlowModel>
   <domainModel id="_EGEcMYDjEea11dlfBOUHWQ">
     <domainElements xsi:type="core:UMLDomainConcept" id="_EGONMIDjEea11dlfBOUHWQ" name="Client">

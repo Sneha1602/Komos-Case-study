@@ -25,4 +25,6 @@ export var lang_EN_US: LangString[] = [
     
     {key: 'mainMenu', text:'Main Menu'},
     {key: 'transactionView', text:'Transactions'},
+    {key: 'helpWindow', text:'Help Window'},
+    {key: 'showNearByATMs', text:'Show Near By ATMs'}
 ];

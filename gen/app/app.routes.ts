@@ -4,6 +4,8 @@ import { LoginComponent } from './views/login.component';
 import { MainMenuComponent } from './views/mainMenu.component';
 import { DenominationComponent } from './views/denomination.component';
 import { TransactionViewComponent } from './views/transactionView.component';
+import { HelpWindowComponent } from './views/helpWindow.component';
+import { ShowNearByATMsComponent } from './views/showNearByATMs.component';
 
 export const routes: RouterConfig = [
 	{
@@ -21,6 +23,14 @@ export const routes: RouterConfig = [
 	{
 		path: 'transactionView',
 		component: TransactionViewComponent
+	},
+	{
+		path: 'helpWindow',
+		component: HelpWindowComponent
+	},
+	{
+		path: 'showNearByATMs',
+		component: ShowNearByATMsComponent
 	},
 	{
 		path: '',
