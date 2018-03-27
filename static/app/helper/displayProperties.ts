@@ -14,7 +14,7 @@ export class DisplayProperties {
 
     //tables
     public tableClass: string;
-
+    public buttonClass: string;
     //navigation
     public navbarContainerClass: string;
     public navbarWrapperClass: string;
@@ -44,7 +44,7 @@ export class DisplayProperties {
 
         //tables
         this.tableClass = 'table table-striped table-hover table-condensed'
-
+        this.buttonClass = '';
         //navigation
         this.navbarContainerClass = '';
         this.navbarWrapperClass = '';

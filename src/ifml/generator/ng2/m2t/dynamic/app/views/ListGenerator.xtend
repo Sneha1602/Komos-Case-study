@@ -88,7 +88,7 @@ public class ListGenerator extends AbstractViewElementGenerator<ListImpl>{
 			
 			for(onSelectEvent : listElement.viewElementEvents.filter(OnSelectEventImpl)){
 				output += '''
-					<button type="button" class="btn btn-default" (click)="«onSelectEvent.name»()" '''
+					<button type="button" class="btn btn-default" name="«onSelectEvent.name»"  (click)="«onSelectEvent.name»()" '''
 				
 				if(!onSelectEvent.annotations.isEmpty()){
 					for(annotation : onSelectEvent.annotations){

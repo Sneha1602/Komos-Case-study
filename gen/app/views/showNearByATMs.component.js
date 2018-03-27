@@ -1,5 +1,5 @@
 //
-// Created by IFML2NG2 on 2018/03/26 23:19:34
+// Created by IFML2NG2 on 2018/03/27 14:40:05
 //
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -19,12 +19,11 @@ var logger_service_1 = require('../services/logger.service');
 var authentication_service_1 = require('../services/authentication.service');
 var data_service_1 = require('../services/data.service');
 var displayProperties_service_1 = require('../services/displayProperties.service');
-// domain concept imports
 var ShowNearByATMsComponent = (function () {
     function ShowNearByATMsComponent() {
     }
     ShowNearByATMsComponent.prototype.onMapsReady = function () {
-        var paderborn = new google.maps.LatLng(51.718921, 8.757509);
+        var paderborn = new google.maps.LatLng(51.71, 8.75);
         var mapOptions = {
             zoom: 9,
             center: paderborn

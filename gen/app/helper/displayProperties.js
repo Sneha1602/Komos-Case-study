@@ -11,6 +11,7 @@ var DisplayProperties = (function () {
         this.hideOnDesktop = '';
         //tables
         this.tableClass = 'table table-striped table-hover table-condensed';
+        this.buttonClass = '';
         //navigation
         this.navbarContainerClass = '';
         this.navbarWrapperClass = '';

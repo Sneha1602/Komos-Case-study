@@ -46,7 +46,7 @@ public class FormGenerator extends AbstractViewElementGenerator<FormImpl>{
 		output += '''
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button id="«onSubmitEvent.id»" name="«onSubmitEvent.name»" (click)="«onSubmitEvent.name»()" type="submit" class="btn btn-default"'''
+						<button id="«onSubmitEvent.id»" name="«onSubmitEvent.name»" (click)="«onSubmitEvent.name»()" type="submit" [ngClass]="_displayPropertiesService.displayProperties.buttonClass"'''
 					if(!onSubmitEvent.annotations.isEmpty()){
 					for(annotation : onSubmitEvent.annotations){
 						if(annotation.text.contains("<<enablingExpression>")){

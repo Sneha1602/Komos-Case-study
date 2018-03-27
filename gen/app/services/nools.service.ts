@@ -39,9 +39,22 @@ export class NoolsService {
 			flow.rule("User not angry", {salience:5},[Profile,"m","(m.getUser().getMood() != 1 && m.getApp().getMoodChecked() == false)"], function(facts){
 				facts.m.getApp().setMoodChecked(true);
 				_DisplayPropertiesService.removeNavigationPath('/transactionView');
-				$('#_GboJAJ9yEeeQDN6CvfzAfw').css('font-size','18');
+				$('#_GboJAJ9yEeeQDN6CvfzAfw').css('font-size','20');
 			});
-			flow.rule("Platform Desktop", {salience:6},[Profile,"m","m.getPlatform().getDeviceType() == 'desktop'"], function(facts){
+			flow.rule("Platform Desktop", {salience:1},[Profile,"m","(m.getUser().getAge() <= 30 && m.getPlatform().getDeviceType() == 'desktop')"], function(facts){
+				_DisplayPropertiesService.setProperty('headerBarClass','row backgroundSecondary divLine borderSecondary');
+				_DisplayPropertiesService.setProperty('routerOutletClass','col-md-10');
+				_DisplayPropertiesService.setProperty('hideOnMobile','');
+				_DisplayPropertiesService.setProperty('navbarContainerClass','sidebar-navbar col-md-2 backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('navbarWrapperClass','sidebar-wrapper backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('navbarHeaderClass','hideElement backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('navbarCollapseClass','backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('navbarItemListClass','sidebar-nav textPrimary backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('searchInputGroupClass','input-group col-md-6 col-md-offset-4 backgroundSecondary borderSecondary');
+				_DisplayPropertiesService.setProperty('isMobile',false);
+				_DisplayPropertiesService.setProperty('buttonClass','btn btn-default btn-md');
+			});
+			flow.rule("Platform Desktop and Old", {salience:2},[Profile,"m","m.getPlatform().getDeviceType() == 'desktop'"], function(facts){
 				_DisplayPropertiesService.setProperty('headerBarClass','row backgroundSecondary divLine borderSecondary');
 				_DisplayPropertiesService.setProperty('routerOutletClass','col-md-10');
 				_DisplayPropertiesService.setProperty('hideOnMobile','');
@@ -68,11 +81,16 @@ export class NoolsService {
 			flow.rule("Navigation Client", {salience:3},[Profile,"m","m.getApp().getUserRole() == 'client'"], function(facts){
 				_DisplayPropertiesService.pushNavigation({path:'/mainMenu',key:'mainMenu'});
 				_DisplayPropertiesService.pushNavigation({path:'/helpWindow',key:'helpWindow'});
-				_DisplayPropertiesService.pushNavigation({path:'/transactionView',key:'transactionView'});
 				_DisplayPropertiesService.pushNavigation({path:'/showNearByATMs',key:'showNearByATMs'});
+				_DisplayPropertiesService.pushNavigation({path:'/transactionView',key:'transactionView'});
 			});
 			flow.rule("Navigation Unregistered", {salience:1},[Profile,"m","m.getApp().getUserRole() != 'client'"], function(facts){
 				_DisplayPropertiesService.clearNavigation();
+			});
+			flow.rule("Change Button Size", {salience:2},[Profile,"m","(m.getPlatform().getDeviceType() == 'desktop' && m.getUser().getAge() > 30)"], function(facts){
+				$('#_M9m8oJxvEee_2OeSSzYyRQ').css('font-size','26');
+				$('#_GboJAJ9yEeeQDN6CvfzAfw').css('font-size','26');
+				$('#_QAydyTEwEeifUboAQqDOdA').css('font-size','26');
 			});
 		});
 	}
