@@ -9,6 +9,7 @@ var DisplayProperties = (function () {
         this.routerOutletClass = '';
         this.hideOnMobile = '';
         this.hideOnDesktop = '';
+        this.bodyClass = '';
         //tables
         this.tableClass = 'table table-striped table-hover table-condensed';
         this.buttonClass = '';

@@ -29,17 +29,17 @@ var NoolsService = (function () {
             flow.rule("Lang en-us", { salience: 1 }, [profile_1.Profile, "m", "m.getUser().getLanguage() == 1"], function (facts) {
                 _ResourceService.setLangFile("enus");
             });
-            flow.rule("User angry", { salience: 5 }, [profile_1.Profile, "m", "(m.getUser().getMood() == 1 && m.getApp().getMoodChecked() == false)"], function (facts) {
+            flow.rule("User angry", { salience: 1 }, [profile_1.Profile, "m", "(m.getUser().getMood() == 1 && m.getApp().getMoodChecked() == true)"], function (facts) {
                 facts.m.getApp().setMoodChecked(true);
                 _DisplayPropertiesService.pushNavigation({ path: '/transactionView', key: 'transactionView' });
                 $('#_GboJAJ9yEeeQDN6CvfzAfw').css('font-size', '26');
             });
-            flow.rule("User not angry", { salience: 5 }, [profile_1.Profile, "m", "(m.getUser().getMood() != 1 && m.getApp().getMoodChecked() == false)"], function (facts) {
+            flow.rule("User not angry", { salience: 1 }, [profile_1.Profile, "m", "(m.getUser().getMood() != 1 && m.getApp().getMoodChecked() == true)"], function (facts) {
                 facts.m.getApp().setMoodChecked(true);
                 _DisplayPropertiesService.removeNavigationPath('/transactionView');
                 $('#_GboJAJ9yEeeQDN6CvfzAfw').css('font-size', '20');
             });
-            flow.rule("Platform Desktop", { salience: 1 }, [profile_1.Profile, "m", "(m.getUser().getAge() <= 30 && m.getPlatform().getDeviceType() == 'desktop')"], function (facts) {
+            flow.rule("Platform Desktop Mood checked Less Age", { salience: 1 }, [profile_1.Profile, "m", "(m.getUser().getAge() <= 30 && m.getPlatform().getDeviceType() == 'desktop' && m.getUser().getMood() < 1)"], function (facts) {
                 _DisplayPropertiesService.setProperty('headerBarClass', 'row backgroundSecondary divLine borderSecondary');
                 _DisplayPropertiesService.setProperty('routerOutletClass', 'col-md-10');
                 _DisplayPropertiesService.setProperty('hideOnMobile', '');
@@ -51,6 +51,49 @@ var NoolsService = (function () {
                 _DisplayPropertiesService.setProperty('searchInputGroupClass', 'input-group col-md-6 col-md-offset-4 backgroundSecondary borderSecondary');
                 _DisplayPropertiesService.setProperty('isMobile', false);
                 _DisplayPropertiesService.setProperty('buttonClass', 'btn btn-default btn-md');
+                _DisplayPropertiesService.setProperty('bodyClass', 'backgroundTriangle');
+            });
+            flow.rule("Platform Desktop Mood checked Age More", { salience: 1 }, [profile_1.Profile, "m", "(m.getUser().getAge() > 30 && m.getPlatform().getDeviceType() == 'desktop' && m.getUser().getMood() < 1)"], function (facts) {
+                _DisplayPropertiesService.setProperty('headerBarClass', 'row backgroundSecondary divLine borderSecondary');
+                _DisplayPropertiesService.setProperty('routerOutletClass', 'col-md-10');
+                _DisplayPropertiesService.setProperty('hideOnMobile', '');
+                _DisplayPropertiesService.setProperty('navbarContainerClass', 'sidebar-navbar col-md-2 backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarWrapperClass', 'sidebar-wrapper backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarHeaderClass', 'hideElement backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarCollapseClass', 'backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarItemListClass', 'sidebar-nav textPrimary backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('searchInputGroupClass', 'input-group col-md-6 col-md-offset-4 backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('isMobile', false);
+                _DisplayPropertiesService.setProperty('buttonClass', 'btn btn-default btn-lg');
+                _DisplayPropertiesService.setProperty('bodyClass', 'backgroundTriangle');
+            });
+            flow.rule("Platform Desktop Mood Not checked More Age", { salience: 1 }, [profile_1.Profile, "m", "(m.getUser().getAge() > 30 && m.getPlatform().getDeviceType() == 'desktop' && m.getUser().getMood() >= 1)"], function (facts) {
+                _DisplayPropertiesService.setProperty('headerBarClass', 'row backgroundSecondary divLine borderSecondary');
+                _DisplayPropertiesService.setProperty('routerOutletClass', 'col-md-10');
+                _DisplayPropertiesService.setProperty('hideOnMobile', '');
+                _DisplayPropertiesService.setProperty('navbarContainerClass', 'sidebar-navbar col-md-2 backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarWrapperClass', 'sidebar-wrapper backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarHeaderClass', 'hideElement backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarCollapseClass', 'backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarItemListClass', 'sidebar-nav textPrimary backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('searchInputGroupClass', 'input-group col-md-6 col-md-offset-4 backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('isMobile', false);
+                _DisplayPropertiesService.setProperty('buttonClass', 'btn btn-default btn-lg');
+                _DisplayPropertiesService.setProperty('bodyClass', 'backgroundTertiary');
+            });
+            flow.rule("Platform Desktop Mood Not checked Less Age", { salience: 1 }, [profile_1.Profile, "m", "(m.getUser().getAge() <= 30 && m.getPlatform().getDeviceType() == 'desktop' && m.getUser().getMood() >= 1)"], function (facts) {
+                _DisplayPropertiesService.setProperty('headerBarClass', 'row backgroundSecondary divLine borderSecondary');
+                _DisplayPropertiesService.setProperty('routerOutletClass', 'col-md-10');
+                _DisplayPropertiesService.setProperty('hideOnMobile', '');
+                _DisplayPropertiesService.setProperty('navbarContainerClass', 'sidebar-navbar col-md-2 backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarWrapperClass', 'sidebar-wrapper backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarHeaderClass', 'hideElement backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarCollapseClass', 'backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarItemListClass', 'sidebar-nav textPrimary backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('searchInputGroupClass', 'input-group col-md-6 col-md-offset-4 backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('isMobile', false);
+                _DisplayPropertiesService.setProperty('buttonClass', 'btn btn-default btn-md');
+                _DisplayPropertiesService.setProperty('bodyClass', 'backgroundTertiary');
             });
             flow.rule("Platform Desktop and Old", { salience: 2 }, [profile_1.Profile, "m", "m.getPlatform().getDeviceType() == 'desktop'"], function (facts) {
                 _DisplayPropertiesService.setProperty('headerBarClass', 'row backgroundSecondary divLine borderSecondary');
@@ -64,7 +107,7 @@ var NoolsService = (function () {
                 _DisplayPropertiesService.setProperty('searchInputGroupClass', 'input-group col-md-6 col-md-offset-4 backgroundSecondary borderSecondary');
                 _DisplayPropertiesService.setProperty('isMobile', false);
             });
-            flow.rule("Platform Mobile", { salience: 6 }, [profile_1.Profile, "m", "m.getPlatform().getDeviceType() == 'atm'"], function (facts) {
+            flow.rule("Platform Mobile less than 1", { salience: 6 }, [profile_1.Profile, "m", "(m.getPlatform().getDeviceType() == 'atm' && m.getUser().getMood() < 1)"], function (facts) {
                 _DisplayPropertiesService.setProperty('headerBarClass', 'hideElement backgroundSecondary borderSecondary');
                 _DisplayPropertiesService.setProperty('routerOutletClass', 'col-md-12');
                 _DisplayPropertiesService.setProperty('hideOnMobile', 'hideElement backgroundSecondary borderSecondary');
@@ -75,6 +118,20 @@ var NoolsService = (function () {
                 _DisplayPropertiesService.setProperty('navbarItemListClass', 'sidebar-nav textPrimary backgroundSecondary borderSecondary');
                 _DisplayPropertiesService.setProperty('searchInputGroupClass', 'input-group backgroundSecondary borderSecondary');
                 _DisplayPropertiesService.setProperty('isMobile', true);
+                _DisplayPropertiesService.setProperty('bodyClass', 'backgroundTriangle');
+            });
+            flow.rule("Platform Mobile greater than 1", { salience: 6 }, [profile_1.Profile, "m", "(m.getPlatform().getDeviceType() == 'atm' && m.getUser().getMood() >= 1)"], function (facts) {
+                _DisplayPropertiesService.setProperty('headerBarClass', 'hideElement backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('routerOutletClass', 'col-md-12');
+                _DisplayPropertiesService.setProperty('hideOnMobile', 'hideElement backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarContainerClass', 'navbar navbar-default navbar-custom backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarWrapperClass', 'container-fluid backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarHeaderClass', 'navbar-header backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarCollapseClass', 'navbar-collapse collapse backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('navbarItemListClass', 'sidebar-nav textPrimary backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('searchInputGroupClass', 'input-group backgroundSecondary borderSecondary');
+                _DisplayPropertiesService.setProperty('isMobile', true);
+                _DisplayPropertiesService.setProperty('bodyClass', 'backgroundTertiary');
             });
             flow.rule("Navigation Client", { salience: 3 }, [profile_1.Profile, "m", "m.getApp().getUserRole() == 'client'"], function (facts) {
                 _DisplayPropertiesService.pushNavigation({ path: '/mainMenu', key: 'mainMenu' });

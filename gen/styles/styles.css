@@ -6,13 +6,20 @@ h1 {
 body {
   margin: 2em;
 }
-
 .backgroundPrimary{
-  background-color: white;
+	background-color: white; 
+}
+.backgroundTriangle{
+ background-image:url("triangle.jpg");
+ background-position: center;
 }
 
 .backgroundSecondary{
   background-color: lightgrey; 
+}
+.backgroundTertiary{
+	background-image:url("angry.jpg");
+	background-position: center;
 }
 
 .backgroundSecondary li:hover{

@@ -11,6 +11,7 @@ export class DisplayProperties {
     public routerOutletClass: string;
     public hideOnMobile: string;
     public hideOnDesktop: string;
+    public bodyClass: string;
 
     //tables
     public tableClass: string;
@@ -41,6 +42,7 @@ export class DisplayProperties {
         this.routerOutletClass = '';
         this.hideOnMobile = '';
         this.hideOnDesktop = '';
+        this.bodyClass='';
 
         //tables
         this.tableClass = 'table table-striped table-hover table-condensed'
