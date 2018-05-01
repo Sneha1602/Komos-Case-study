@@ -40,7 +40,7 @@ export class UserProfile {
 	};
 	
 	public getLanguage(): Language{
-	    return this.language;
+	    return 0;
 	}
 }
 

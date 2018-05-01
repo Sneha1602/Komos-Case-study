@@ -30,7 +30,7 @@ var UserProfile = (function () {
     };
     ;
     UserProfile.prototype.getLanguage = function () {
-        return this.language;
+        return 0;
     };
     return UserProfile;
 }());

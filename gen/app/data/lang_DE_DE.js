@@ -19,5 +19,7 @@ exports.lang_DE_DE = [
     { key: 'search', text: 'suchen' },
     { key: 'mainMenu', text: 'Hauptmenü' },
     { key: 'transactionView', text: 'Transaktionen' },
+    { key: 'helpWindow', text: 'Hilfe' },
+    { key: 'showNearByATMs', text: 'Geldautomat in der Nähe' }
 ];
 //# sourceMappingURL=lang_DE_DE.js.map
